@@ -1,0 +1,14 @@
+a {
+    text-decoration: none;
+    text-align: center;
+}
+h6 {
+    margin-top: -1.5em;
+}
+.btn {
+    border: 1px, solid #EAECF0;
+    background-color: #EAECF0;
+    color: black;
+    height: 3em;
+    width: 80%;
+}

@@ -1,14 +1,40 @@
 a {
     text-decoration: none;
-    text-align: center;
-}
-h6 {
-    margin-top: -1.5em;
 }
 .btn {
     border: 1px, solid #EAECF0;
     background-color: #EAECF0;
     color: black;
+    font-family: 'Inter';
+    margin-left: 2%;
+    font-size: 14px;
     height: 3em;
-    width: 80%;
+    width: 96%;
+    border-radius: 0.2em;
+}
+h4 {
+    margin-top: 0.9em;
+}
+h6 {
+    margin-top: -1.3em;
+}
+.links-img {
+    margin-top: 1em;
+    width: 20px;
+    height: 20px;
+}
+.slack-img {
+    margin-right: 0.2em;
+}
+.github-img {
+    margin-left: 0.2em;
+}
+
+/* For medium and large Screens */
+@media screen and (min-width: 769px) {
+    .btn {
+        margin-left: 10%;
+        width: 80%;
+        font-size: 16px;
+    }
 }

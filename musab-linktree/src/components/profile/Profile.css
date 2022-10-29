@@ -1,0 +1,39 @@
+.profile {
+    font-family: 'Inter';
+}
+.profile-imgs {
+    display: flex;
+}
+.profile-img {
+    padding: 0px;
+    width: 88px;
+    height: 88px;
+    border-radius: 275px;
+    margin-left: 11em;
+    margin-right: 9em;
+}
+.profile-btn {
+    margin-top: -4em;
+}
+.hidden {
+    display: none;
+}
+
+/* conditional rendering */
+@media screen and (max-width: 769px) {
+    .desktop {
+        display: none;
+    }    
+}
+
+/* For medium and large screens */
+@media screen and (min-width: 769px) {
+    .mobile {
+        display: none;
+    }
+    .profile-img {
+        margin-left: 37em;
+        margin-right: 11em;
+    }
+        
+} 

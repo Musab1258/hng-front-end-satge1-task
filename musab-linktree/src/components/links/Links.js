@@ -1,4 +1,6 @@
 import './Links.css';
+import slack from '../../images/slack.svg';
+import github from '../../images/github.svg';
 
 function Links() {
     return (
@@ -43,6 +45,8 @@ function Links() {
                     <h6>If you want to be conversant with the rules of professional design, check out this book</h6>
                 </div>
             </a>
+            <img src={slack} alt='slack logo' className="links-img slack-img" />
+            <img src={github} alt='github logo' className="links-img github-img" />
         </div>
     );
 }

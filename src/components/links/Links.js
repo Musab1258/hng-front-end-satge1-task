@@ -46,8 +46,9 @@ function Links() {
           <h6>If you want to be conversant with the rules of professional design, check out this book</h6>
         </div>
       </a>
-      <a id='contact'
-        className="a"
+      <a  href='#'
+          id='contact'
+          className="a"
       >
         <Link to="/contact">
           <div className="btn">

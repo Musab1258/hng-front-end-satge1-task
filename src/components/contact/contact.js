@@ -9,17 +9,19 @@ function Contact() {
         <p className='heading-p'>Hi there, contact me to ask me about anything you have in mind.</p>
       </div>
       <form>
-        <div className='form-entries'>
+        <div className='lg-name'>
+          <div className='form-entries fst-name'>
           <label>
             First name
           </label>
           <input id="first_name" className='entry' />
-        </div>
-        <div className='form-entries'>
-          <label>
-            Last name
-          </label>
-          <input id="last_name" className='entry' />
+          </div>
+          <div className='form-entries lst-name'>
+            <label>
+              Last name
+            </label>
+            <input id="last_name" className='entry' />
+          </div>
         </div>
         <div className='form-entries' >
           <label>

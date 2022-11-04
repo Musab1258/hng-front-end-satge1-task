@@ -4,6 +4,8 @@ import github from '../../images/github.svg';
 import { Link } from 'react-router-dom';
 
 function Links() {
+  let url = "";
+  
   return (
     <div>
       <a href='https://training.zuri.team/'
@@ -46,7 +48,7 @@ function Links() {
           <h6>If you want to be conversant with the rules of professional design, check out this book</h6>
         </div>
       </a>
-      <a  href='#'
+      <a  href={url}
           id='contact'
           className="a"
       >

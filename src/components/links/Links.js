@@ -4,7 +4,7 @@ import github from '../../images/github.svg';
 import { Link } from 'react-router-dom';
 
 function Links() {
-  let url = "";
+  const url = "";
   
   return (
     <div>

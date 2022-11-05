@@ -1,9 +1,61 @@
+import { useState, useRef, useEffect } from 'react';
 import './Contact.css';
 import Footer from "../footer/Footer";
 
-
+const NAME_REGEX = /^[a-zA-Z][a-zA-Z0-9-_.]{1,23}$/;
+const EMAIL_REGEX = /^[a-zA-Z][a-zA-Z0-9-_](?=.*[.]).{1,500}$/;
 
 function Contact() {
+  const formRef = useRef();
+
+  const [ firstName, setFirstName ] = useState("");
+  const [ validFirstName, setValidFirstName ] = useState(false);
+  const [ firstNameFocus, setFirstNameFocus] = useState(false);
+
+  const [ lastName, setLastName ] = useState("");
+  const [ validLastName, setValidLastName ] = useState(false);
+  const [ lastNameFocus, setLastNameFocus] = useState(false);
+
+  const [ email, setEmail ] = useState("");
+  const [ validEmail, setValidEmail ] = useState(false);
+  const [ emailFocus, setEmailFocus] = useState(false);
+
+  const [ message, setMessage ] = useState("");
+  const [ validMessage, setValidMessage ] = useState(false);
+  const [ messageFocus, setMessageFocus] = useState(false);
+
+  useEffect(() => {
+    formRef.current.focus();
+  }, []);
+  
+  useEffect(() => {
+    const result = NAME_REGEX.test(firstName);
+    setValidFirstName(result);
+  }, [firstName]);
+
+  useEffect(() => {
+    const result = NAME_REGEX.test(lastName);
+    setValidLastName(result);
+  }, [lastName]);
+
+  useEffect(() => {
+    const result = EMAIL_REGEX.test(email);
+    setValidEmail(result);
+  }, [email]);
+
+  useEffect(() => {
+    const result = NAME_REGEX.test(message);
+    setValidMessage(result);
+  }, [message]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setMessage("");
+  }
+  
   return (
     <div>
       <div className='contact'>
@@ -18,37 +70,57 @@ function Contact() {
               First name
             </label>
             <input id="first_name"
+                   type="text"
+                   ref={formRef}
+                   onChange={(e) => setFirstName(e.target.value)}
+                   onFocus={() => setFirstNameFocus(true)}
                    placeholder="Enter your first name"
-                   className='entry' 
+                   className='entry input' 
             />
+            <p className='firstNameFocus & !validFirstName ? show : hide'>Please, enter your first name</p>
             </div>
             <div className='form-entries lst-name'>
               <label>
                 Last name
               </label>
               <input id="last_name"
+                     type="text"
+                     ref={formRef}
+                     onChange={(e) => setLastName(e.target.value)}
+                     onFocus={() => setLastNameFocus(true)}
                      placeholder="Enter your last name"
-                     className='entry' 
+                     className='entry  input' 
               />
+              <p className='lastNameFocus & !validLastName ? show : hide'>Please, enter your last name</p>
             </div>
           </div>
           <div className='form-entries' >
             <label>
               Email
             </label>
-            <input id="email" 
+            <input id="email"
+                   type="email"
+                   ref={formRef}
+                   onChange={(e) => setEmail(e.target.value)}
+                   onFocus={() => setEmailFocus(true)}
                    placeholder="yourname@email.com"
-                   className='entry' 
+                   className='entry input' 
             />
+            <p className='emailFocus & !validEmail ? show : hide'>Please, enter your email address</p>
           </div>
           <div className='form-entries'>
             <label>
               Message
             </label>
             <textarea id="message"
+                      type="text"
+                      ref={formRef}
+                      onChange={(e) => setMessage(e.target.value)}
+                      onFocus={() => setMessageFocus(true)}
                       placeholder="Send me a message and I'll reply you as soon as possible..."
-                      className='entry'
+                      className='entry text-area'
             />
+            <p className='messageFocus & !validMessage ? show : hide'>Please, enter your message</p>
           </div>
           <div>
             <input type="checkbox" className='checkbox' />

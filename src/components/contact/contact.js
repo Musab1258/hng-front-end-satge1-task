@@ -69,7 +69,7 @@ function Contact() {
         <form onSubmit={handleSubmit}>
           <div className='lg-name'>
             <div className='form-entries fst-name'>
-              <label>
+              <label htmlFor="firstname" >
                 First name
               </label>
               <input id="first_name"
@@ -84,7 +84,7 @@ function Contact() {
               <p className={firstNameFocus & !validFirstName ? 'show' : 'hide'}>Please, enter your first name</p>
             </div>
             <div className='form-entries lst-name'>
-              <label>
+              <label htmlFor="lastname" >
                 Last name
               </label>
               <input id="last_name"
@@ -100,7 +100,7 @@ function Contact() {
             </div>
           </div>
           <div className='form-entries' >
-            <label>
+            <label htmlFor="email" >
               Email
             </label>
             <input id="email"
@@ -115,12 +115,14 @@ function Contact() {
             <p className={emailFocus & !validEmail ? 'show' : 'hide'} >Please, enter your email address</p>
           </div>
           <div className='form-entries'>
-            <label>
+            <label htmlFor="message" >
               Message
             </label>
             <textarea id="message"
               type="text"
               value={message}
+              cols="30"
+              rows="10"
               onChange={(e) => setMessage(e.target.value)}
               onFocus={() => setMessageFocus(true)}
               onBlur={() => setMessageFocus(false)}

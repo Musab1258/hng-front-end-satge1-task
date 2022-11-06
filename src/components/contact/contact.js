@@ -139,7 +139,7 @@ function Contact() {
             <span className='checkbox-span' >You agree to providing your data to Musab who may contact you.</span>
           </div>
           <div>
-            <button id="btn__submit"
+            <button id="btn_submit"
               type="button"
               onClick={handleSubmit}
               className='send-btn'
